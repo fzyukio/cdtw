@@ -2,7 +2,7 @@ import matplotlib.cm as cm
 import matplotlib.pyplot as plt
 import numpy as np
 
-from cyed import cyed, Settings
+from ced.cyed import cyed, Settings
 
 
 class EditDistance(cyed):
