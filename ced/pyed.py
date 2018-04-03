@@ -146,35 +146,36 @@ class Lcss(EditDistance):
 if __name__ == '__main__':
 
     # Two dimensional
-    # arr1 = np.array([[4, 0, 0], [4, 0, 0], [2, 0, 0], [4, 0, 0]])
-    # arr2 = np.array([[5, 0, 0], [4, 0, 0], [5, 0, 0], [6, 0, 0], [4, 0, 0]])
-    # tolerance = np.array([1, 0, 0])
-    # settings = Settings(compute_path=True, dist='edr')
-    # d = ed(arr1, arr2, tolerance, settings)
-    # print(d.get_cost())
-    # print(d.get_path())
+    r = np.array([[4, 0, 0], [4, 0, 0], [2, 0, 0], [4, 0, 0]])
+    q = np.array([[5, 0, 0], [4, 0, 0], [5, 0, 0], [6, 0, 0], [4, 0, 0]])
+    tolerance = np.array([1, 0, 0])
+    args = {'sigmas': tolerance}
+    settings = Settings(compute_path=True, dist='euclid', norm='none')
+    d = Dtw(r, q, args, settings)
+    print(d.get_cost())
+    print(d.get_path())
 
     # r = np.array([[4, 0, 0], [4, 0, 0], [2, 0, 0], [4, 0, 0]])
     # q = np.array([[5, 0, 0], [4, 0, 0], [5, 0, 0], [6, 0, 0], [4, 0, 0]])
     # tolerance = 1
 
-    r = np.array([4, 4, 2, 4])
-    q = np.array([5, 4, 5, 6, 4])
-    tolerance = np.array([1])
-    gap = np.array([0])
+    # r = np.array([4, 4, 2, 4])
+    # q = np.array([5, 4, 5, 6, 4])
+    # tolerance = np.array([1])
+    # gap = np.array([0])
 
-    args = {'sigmas': tolerance, 'gap': gap}
+    # args = {'sigmas': tolerance, 'gap': gap}
 
-    d = Lcss(r, q, args, settings=Settings(
-                              dist='euclid',
-                              # step='p0sym',  # Sakoe-Chiba symmetric step with slope constraint p = 0
-                              # window='palival',  # type of the window
-                              # param=2.0,  # window parameter
-                              norm='min',  # normalization
-                              compute_path=False))
-    print(d.get_cost())
-    print(d.get_path())
-    print(d.get_dist())
+    # d = Lcss(r, q, args, settings=Settings(
+    #                           dist='euclid',
+    #                           # step='p0sym',  # Sakoe-Chiba symmetric step with slope constraint p = 0
+    #                           # window='palival',  # type of the window
+    #                           # param=2.0,  # window parameter
+    #                           norm='min',  # normalization
+    #                           compute_path=False))
+    # print(d.get_cost())
+    # print(d.get_path())
+    # print(d.get_dist())
 
     # d.plot_seq_mat_path()
     # plt.show()

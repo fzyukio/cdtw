@@ -42,6 +42,6 @@ setup(
     url='https://github.com/yfukuzaw/ced',
     keywords=['dtw', 'dynamic time warping', 'ed', 'edit distance', 'edr', 'edit distance on real sequences'
               'erp', 'edit distance with real penalty', 'lcss', 'longest common subsequence'],
-    install_requires=['numpy'],
+    install_requires=['numpy', 'Cython'],
 
 )
